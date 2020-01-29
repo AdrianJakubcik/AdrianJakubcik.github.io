@@ -35,13 +35,10 @@ function check_resize() {
 $(document).ready(function () {
 
     // Declaring variables/constants which I will be using later in the code
-    const carousel_img = ".carousel-img";
+    const carousel = "#carousel";
     
-    $(carousel_img).swipeleft(function() {
-        $(this).carousel('next'); 
-    });
-
-    $(carousel_img).swiperight(function(){
-        $(this).carousel('prev');
+    $(carousel).carousel({
+        interval: 3500,
+        touch: true
     });
 });
