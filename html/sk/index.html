@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This indention is totally legal and we are 100% certain about this -->
-<html>
+<html lang="en">
 
 <head>
     <!-- Tells browser what character set we want. Default does not include SK characters -->
@@ -17,20 +17,22 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="../../css/style.css">
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="../../js/nav_jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <header>
     <!-- Header -->
 <!-- The header usually contains the logo and a navigation bar -->
-<header>
-    <!-- Navigation bar -->
+<!-- Navigation bar -->
     <nav>
         <!-- Navigation for smaller devices -->
         <div id="nav-bar" class="nav-phone">
@@ -88,7 +90,7 @@
         <li onclick="location.href='#'" class="nav-elem">
             <div>Profil Školy</div>
         </li>
-        <li onclick="location.href='interviews/index.html'" class="nav-elem">
+        <li onclick="location.href='/html/en/interviews/index.html'" class="nav-elem">
             <div>Bývalí Študenti</div>
         </li>
         <li onclick="location.href='https://galileoschool.edupage.org/znamky/'" class="nav-elem">
@@ -110,7 +112,7 @@
 </div>
         
     </nav>
-</header>
+    </header>
     <div class="red-wine" id="nav-carousel-separator"></div>
     <div class="content">
         <!-- The link below explains how a bootstrap carousel works -->
@@ -197,40 +199,40 @@
         <!-- Cards -->
 <div class="card-deck">
     <!-- Card 1 -->
-    <div class="card">
+    <div class="card" onclick="location.href='#'">
         <img src="../../images/card_thumbnails/gym.jpg" class="card-img-top" alt="Picture Not Available!">
         <h4 class="card-title">Gymnázium</h4>
         <hr>
         <div class="card-body">
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
         </div>
-        <div class="card-footer hidden">
+        <!-- <div class="card-footer hidden">
             <button class="btn fill-area wine-red square-corners" onclick="">More Info</button>
-        </div>
+        </div> -->
     </div>
     <!-- Card 2 -->
-    <div class="card">
+    <div class="card" onclick="location.href='#'">
         <img src="../../images/card_thumbnails/primary_school.jpg" class="card-img-top" alt="Picture Not Available!">
         <h4 class="card-title">Základná Škola</h4>
         <hr>
         <div class="card-body">
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
         </div>
-        <div class="card-footer hidden">
+        <!-- <div class="card-footer hidden">
             <button class="btn fill-area wine-red square-corners" onclick="">More Info</button>
-        </div>
+        </div> -->
     </div>
     <!-- Card 3 -->
-    <div class="card">
+    <div class="card" onclick="location.href='#'">
         <img src="../../images/card_thumbnails/kindergarten.jpg" class="card-img-top" alt="Picture Not Available!">
         <h4 class="card-title">Materská Škola</h4>
         <hr>
         <div class="card-body">
             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
         </div>
-        <div class="card-footer hidden">
+        <!-- <div class="card-footer hidden">
             <button class="btn fill-area wine-red square-corners" onclick="">More Info</button>
-        </div>
+        </div> -->
     </div>
     <!-- Template: -->
     <!-- 
