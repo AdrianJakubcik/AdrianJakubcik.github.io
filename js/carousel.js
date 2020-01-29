@@ -36,5 +36,13 @@ $(document).ready(function () {
 
     // Declaring variables/constants which I will be using later in the code
     const carousel = "#carousel";
+    
     $(carousel).carousel();
+    $(carousel).swipe({
+        swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+          if (direction == 'left') $(this).carousel('next');
+          if (direction == 'right') $(this).carousel('prev');
+        },
+        allowPageScroll:"vertical"
+      });
 });
