@@ -1,7 +1,3 @@
-// Debug message to notify that the script has loaded.
-// To see it, find the console tab
-// console.log("Carousel JavaScript has loaded!");
-
 // get the carousel images
 const images = Array.from(document.querySelectorAll('.carousel-item img'))
 // get the source strings
@@ -35,3 +31,17 @@ function check_resize() {
         });
     }
 }
+
+$(document).ready(function () {
+
+    // Declaring variables/constants which I will be using later in the code
+    const carousel_img = ".carousel-img";
+    
+    $(carousel_img).swipeleft(function() {
+        $(this).carousel('next'); 
+    });
+
+    $(carousel_img).swiperight(function(){
+        $(this).carousel('prev');
+    });
+});
