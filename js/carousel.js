@@ -36,9 +36,5 @@ $(document).ready(function () {
 
     // Declaring variables/constants which I will be using later in the code
     const carousel = "#carousel";
-    
-    $(carousel).carousel({
-        interval: 3500,
-        touch: true
-    });
+    $(carousel).carousel();
 });
