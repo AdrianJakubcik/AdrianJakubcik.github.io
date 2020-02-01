@@ -302,6 +302,7 @@ nav {
     /* Prevents ul items being shifted to the right */
     padding-left: 0px !important;
     padding-right: 0px !important;
+    top: auto !important;
 }
 
 .nav-desk li {
@@ -512,6 +513,7 @@ div.square {
 
 #menu-img, #search-img {
     height: 5.5vw;
+    width: auto;
     margin: auto;
 }
 

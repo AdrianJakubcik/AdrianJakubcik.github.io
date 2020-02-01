@@ -21,32 +21,73 @@
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="../../../js/nav_jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
     <style>
-    #navigation {
-        display: flex;
-        flex-direction: column;
-        max-height: 52px;
-        justify-content: center;
-        width: 100%;
-        align-items: center;
-        align-content: center;
-        padding-bottom: 0;
-        
+
+    .header > img {
+        display: none;
+    }
+
+    @media screen and (min-width: 670px){
+        #navigation {
+            display: flex;
+            flex-direction: column;
+            max-height: 52px;
+            justify-content: center;
+            width: 100%;
+            align-items: center;
+            align-content: center;
+            padding-bottom: 0;
+            z-index: 0;
+            font-size: 2vw;
+            transition: width 2s ease-in;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-right: 0;
+        }
+
+        #nav-desk {
+            position: absolute;
+            width: 100%;
+            height: 52px;
+            right: 0;
+            transition: 2s ease-in;
+        }
+
+        .hideMenu {
+            width: 0% !important;
+            transition: 2s ease;
+        } 
+
+        #navigation > li {
+            padding-right: calc(520px*0.025);
+            padding-left: calc(520px*0.025);
+            height: 52px;
+        }
+
+        .header > img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+    }
+
+    @media screen and (min-width: 1100px){
+
+        #navigation > li {
+        padding-right: calc(520px*0.06);
+        padding-left: calc(520px*0.06);
+        }
     }
     
-    #navigation > li {
-        padding-right: calc(520px*0.04);
-        padding-left: calc(520px*0.04);
-    }
 </style>
 </head>
 <body>
-    <header>
+    <header class="flex">
         <!-- Header -->
 <!-- The header usually contains the logo and a navigation bar -->
 <!-- Navigation bar -->
@@ -130,7 +171,13 @@
         
     </nav>
 <div class="red-wine" id="nav-carousel-separator"></div>
+        <div id="header-img" class="header"><img src="../../../images/interviews/header.jpg" alt="Welcome To Interviews With Past Students"></div>
     </header>
+    
+    <div class="main-content">
 
+    </div>
+
+    <script src="../../../js/navigation_horizontal.js"></script>
 </body>
 </html>

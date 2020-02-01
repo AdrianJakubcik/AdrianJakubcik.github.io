@@ -50,10 +50,11 @@ $(document).ready(function () {
 
     function openDesktopMenu() {
         // Slides the navigation out / in.
-        $(".navbar").slideToggle("slow");
+        $("#navigation").slideToggle("slow");
         // Toggles look of menu button (e.g. colour).
         $("#nav-btn").toggleClass("active-nav-btn");
         $("#menu-overlay").toggleClass('no-display');
+        $("header").toggleClass('menu-open');
         // Fade out language dropdown.
         $(".dropdown-content").fadeOut(200);
         adjustTop(calculateTop(), "#navigation");
@@ -74,7 +75,7 @@ $(document).ready(function () {
         // Make 'left' elements toggle their colour.
         $(".left").toggleClass("red-wine");
         // Hide / Show the search bar.
-        $(".search-drop").toggleClass("hidden");
+        $(".search-drop").toggleClass("no-display");
         // Toggles colour of school name.
         $("#title").toggleClass("title-open-nav");
         // Adjusts logo's margin-left.
@@ -85,6 +86,8 @@ $(document).ready(function () {
         $("#logo").toggleClass("logo-img-open-nav");
         //
         $("header").toggleClass("scroll-menu");
+        if($('header').hasClass('flex'))
+            $("header").toggleClass('menu-open');
         isInMenu = !isInMenu;
     }
 
