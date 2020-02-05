@@ -53,13 +53,11 @@
             <!-- Items which should be on the left -->
             <div class="left">
                 <!-- Search button -->
-                <div class="nav-phone search-drop dropdown square">
-                    <div id="search" class="nav-phone search">
-                        <img id="search-img" src="../../../images/icons/search.png">
-                    </div>
-                    <div class="nav-phone search-dropdown-content">
-                        <input class="nav-phone search-input" type="text" placeholder="Search.." name="search">
-                    </div>
+                <div class="search-container close">
+                    <input type="search" name="searchInp" id="search_box">
+                </div>
+                <div id="search" class="nav-phone search">
+                    <img id="search-img" src="../../../images/icons/search.png">
                 </div>
                 <!-- School logo -->
                 <div id="logo-container" class="nav-phone school-logo-container">
@@ -75,15 +73,8 @@
             <div class="right">
 
                 <!-- Language selection dropdown -->
-<div id="menu-btn-img" class="nav-phone language-dropdown dropdown square">
-    <div id="langBtn" class="nav-phone lang darker-gray">
-        <div class="lang-text">EN</div>
-    </div>
-    <div id="lang-sk" class="nav-phone language-dropdown-content dropdown-content">
-        <div onclick="location.href='../../sk/interviews/index.html'" class="nav-phone light-gray lang lang-text">
-            <div class="language-select-btn" style="width: auto;">SK</div>
-        </div>
-    </div>
+<div id="langBtn" onclick="location.href='../../sk/interviews/index.html'" class="nav-phone lang darker-gray">
+    <div class="lang-text">SK</div>
 </div>
                 
                 <!-- Button for opening navigation bar dropdown -->
@@ -157,8 +148,9 @@
         <div id="header-img" class="header"><img src="../../../images/interviews/header.jpg" alt="Welcome To Interviews With Past Students"></div>
     </header>
     
-    <div class="main-content">
-
+    <div class="content">
+        <div id="menu-overlay" class="transparent overlay no-display"></div>
+        
     </div>
 
 </body>
