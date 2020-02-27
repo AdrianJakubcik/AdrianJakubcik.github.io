@@ -314,6 +314,15 @@ hr {
 
 @media screen and (min-width: 670px) {
 
+    body::-webkit-scrollbar {
+        width: 0;
+    }
+
+    body {
+        overflow: -moz-scrollbars-none;
+        -ms-overflow-style: none;
+    }
+
     .card.interview {
         border-radius: 0;
     }
@@ -334,6 +343,10 @@ hr {
         right: 0;
     }
 
+    #modal-box::-webkit-scrollbar {
+        width: 0;
+    }
+
     #modal-box {
         display: block;
         position: fixed;
@@ -351,6 +364,8 @@ hr {
         overflow: auto;
         border-radius: 1%;
         transition: .55s ease;
+        overflow: -moz-scrollbars-none;
+        -ms-overflow-style: none;
     }
 
     #modal-box > .card-body > div.card-text {
@@ -379,6 +394,7 @@ hr {
     }
 
     #modal-box > img {
+        margin-top: 10px;
         max-width: 400px;
         max-height: 400px;
     }
@@ -411,7 +427,7 @@ hr {
         height: 100%;
         padding-left: 0;
         color: #ffffff;
-        font-family: cursive;
+        font-family: 'Century Gothic', 'Futura', 'Didact Gothic', san-serif;
     }
 
     nav#modal-navigation > ul > li {
@@ -1147,10 +1163,13 @@ li.nav-phone.title.searching {
 
     #main-nav {
         display: flex;
+        display: -ms-flexbox;
         position: sticky;
         top: 0;
-        flex-direction: column;
+        flex-direction: row;
         max-height: 52px;
+        -ms-flex-direction: row;
+        -ms-flex-align: center;
         justify-content: center;
         width: 100%;
         align-items: center;
