@@ -28,7 +28,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="../../../js/navigation.js"></script>
-    <script src="../../../js/contact.js"></script>
 </head>
 
 <body class="contacts">
@@ -144,7 +143,7 @@
 
 <div class="contact-info container">
     <ul class="list">
-        <li><i class="far fa-envelope"></i><h6 class="phone title">Email:</h6><a href="mailto:info@galileoschool.sk">info@galileoschool.sk</a></li>
+        <li><i class="far fa-envelope"></i><h6 class="phone title">Email:</h6><a id="school-email" href="mailto:info@galileoschool.sk">info@galileoschool.sk</a></li>
         <li>
             <i class="fas fa-phone-alt"></i> 
             <h6 class="phone title">Telephone:</h6>
@@ -159,21 +158,24 @@
 </div>
 <div class="contact-form container">
     <div class="left flex column center">
-        <img src="../../../images/envelope.svg" alt="">
+        <img src="../../../images/envelope.svg" alt="" draggable="false">
     </div>
     <div class="right flex column center">
         <h2>Máte Otázky?</h2>
         <div>
-            <form id="Contact-Form" class="flex column" action="#">
+            <form id="Contact-Form" class="flex column" action="javascript:sendMail();" autocomplete="off">
                 <div class="form-input-cont">
-                    <input class="form input" type="text" name="Name" id="Name" placeholder="Mark Twain" autocomplete="off">
+                    <input class="form input" type="text" name="Name" id="Name" placeholder="Your Full Name" autocomplete="off">
                 </div>
+                <span class="error msg" input="Name">Too short! Minimum lenght is 4 characters</span>
                 <div class="form-input-cont">
                     <input class="form input" type="email" name="Email" id="Email" placeholder="Email" autocomplete="off">
                 </div>
+                <span class="error msg" input="Email">Please enter a valid email</span>
                 <div class="form-input-cont">
                     <input class="form input" type="text" name="Subject" id="Subject" placeholder="Subject" autocomplete="off">
                 </div>
+                <span class="error msg" input="Subject">Please enter a valid subject</span>
             </form>
             <textarea class="form input" name="Message" id="Message" cols="10" rows="5" placeholder="Message" form="Contact-Form"></textarea>
             <input type="submit" value="Poslať" form="Contact-Form" id="submitBtn">
@@ -193,6 +195,7 @@
 </div>
     </div>
 
+    <script src="../../../js/contact.js"></script>
 </body>
 
 </html>

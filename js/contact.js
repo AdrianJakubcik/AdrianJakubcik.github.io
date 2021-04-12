@@ -20,22 +20,24 @@ $(document).ready(function () {
             elem.addEventListener('focusout', (e) => {
                 e.target.parentElement.classList.remove("focus")
 
-                if (e.target.value === "")
-                    return;
+                if (e.target.value === "") return;
                 if (e.target.getAttribute("type") == "email")
-                    validate(e.target.value, true) ? changeClass(e.target.parentElement, "invalid", "valid") : changeClass(e.target.parentElement, "valid", "invalid");
+                    validate(e.target, true) ? valid(e) : invalid(e);
                 else
-                    validate(e.target.value) ? changeClass(e.target.parentElement, "invalid", "valid") : changeClass(e.target.parentElement, "valid", "invalid");
+                    validate(e.target) ? valid(e) : invalid(e);
             });
 
             elem.addEventListener('input', (e) => {
-                if (e.target.value === "")
+                if (e.target.value === "") {
                     e.target.parentElement.classList = "form-input-cont focus";
+                    hideErrorMsg(e.target);
+                }
+                    
                 else {
                     if (e.target.getAttribute("type") == "email")
-                        validate(e.target.value, true) ? changeClass(e.target.parentElement, "invalid", "valid") : changeClass(e.target.parentElement, "valid", "invalid");
+                        validate(e.target, true) ?  valid(e) : invalid(e);
                     else
-                        validate(e.target.value) ? changeClass(e.target.parentElement, "invalid", "valid") : changeClass(e.target.parentElement, "valid", "invalid");
+                        validate(e.target) ? valid(e) : invalid(e);
                 }
             });
         }
@@ -44,22 +46,24 @@ $(document).ready(function () {
             form_inputs.forEach(e => {
                 if (e.getAttribute("type") == "email")
                 {
-                    if (!validate(e.value, true)) {
+                    if (!validate(e, true)) {
                         e.parentElement.classList.add('invalid');
+                        showErrorMsg(e);
                         elem.preventDefault();
                         return;
                     }
                 }
                 else {
-                    if (!validate(e.value)) {
+                    if (!validate(e)) {
                         e.parentElement.classList.add('invalid');
+                        showErrorMsg(e);
                         elem.preventDefault();
                         return;
                     }
                 }
             });
 
-            if (!validate(document.getElementById("Message").value)) {
+            if (!validate(document.getElementById("Message"))) {
                 elem.preventDefault();
                 return;
             }
@@ -69,8 +73,8 @@ $(document).ready(function () {
     /**
      * 
      * @param {HTMLElement} elem 
-     * @param {String} class1 
-     * @param {String} class2 
+     * @param {String} class1 - from class
+     * @param {String} class2 - to class
      */
     function changeClass(elem, class1, class2) {
         if (elem.classList.contains(class1)) {
@@ -83,6 +87,45 @@ $(document).ready(function () {
             elem.classList.add(class2);
     }
 
+    function valid(element) {
+        //console.log("valid() called!");
+        changeClass(element.target.parentElement, "invalid", "valid");
+        hideErrorMsg(element.target);
+    }
+
+    function invalid(element) {
+        //console.log("invalid() called!");
+        changeClass(element.target.parentElement, "valid", "invalid");
+        showErrorMsg(element.target);
+    }
+
+    /**
+     * 
+     * @param {HTMLElement} target 
+     */
+    function showErrorMsg(target) {
+        var id = target.getAttribute("name");
+        var span = document.querySelector(`span.error.msg[input="${id}"]`);
+
+        $(span).show(100);
+        //span.classList.add("display-block");
+    }
+
+    /**
+     * 
+     * @param {HTMLElement} target 
+     */
+    function hideErrorMsg(target) {
+        var id = target.getAttribute("name");
+        var span = document.querySelector(`span.error.msg[input="${id}"]`);
+
+        $(span).hide(100);
+        //span.classList.remove("display-block");
+    }
+
+    /**
+     * Checks whether a quickfix of the background is necessary
+     */
     async function checkAutoHeight() {
         desktop = (document.getElementById("heading").scrollHeight != 0) ? true : false;
         if (autoHeightApplied) body.classList.remove("auto-height");
@@ -93,7 +136,10 @@ $(document).ready(function () {
             autoHeightApplied = true;
         });
     }
+
 });
+
+
 
 /**
  * 
@@ -106,12 +152,12 @@ function autoHeight(body, callback) {
 
 /** Checks whether the given string is a valid input
  * 
- * @param {String} string 
+ * @param {HTMLElement} elem 
  * @param {boolean} email 
  * @returns {boolean}
  */
-function validate(string, email = false)
-{
+function validate(elem, email = false) {
+    var string = elem.value;
     if (!string || string == null || string == undefined) return false;
 
     string = string.trim();
@@ -133,4 +179,25 @@ function validate(string, email = false)
  */
 function emailValidate(email) {
     return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
-}   
+}
+
+function sendMail() {
+    try {
+        let name = document.getElementById("Name").value;
+        let email = document.getElementById("Email").value;
+        let subject = document.getElementById("Subject").value;
+        let message = document.getElementById("Message").value;
+        let mail = document.getElementById("school-email").textContent;
+
+
+        if (validate(name) && validate(email, true) && validate(subject) && validate(message) && validate(mail, true)) {
+            let body = `Dear Galileo School,\r\n\n${message}\r\n\nSincerely,\r\n${name} → ${email}`;
+            window.open(`mailto:${mail}?subject=${subject}&body=${encodeURIComponent(body)}`);
+            window.location.reload();
+        }
+        else throw new Error("There was an error while trying to send mail!");
+        
+    } catch (error) {
+        throw error;
+    }
+}

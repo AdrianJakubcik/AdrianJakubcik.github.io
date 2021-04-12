@@ -198,9 +198,9 @@ div.contact-info ul.list {
     height: 100%;
     background-color: #fcfcfccb;
     overflow-y: scroll;
-    border-top: 10px groove #a60000;
-    border-radius: 4px;
-    border-start-end-radius: 8%;
+    border-top: 10px solid #a60000;
+    /*border-radius: 4px;
+    border-start-end-radius: 8%;*/
 }
 
 div.contact-info ul.list, div.contact-info ul.list li ul {
@@ -250,12 +250,26 @@ div.content.contacts {
 }
 
 .error {
-    color: red;
+    color: white;
+    text-shadow:
+     -1px -1px 0 rgb(255, 0, 0),  
+      1px -1px 0 rgb(255, 0, 0),
+      -1px 1px 0 rgb(255, 0, 0),
+       1px 1px 0 rgb(255, 0, 0);
     font-size: smaller;
     font-weight: bold;
     display: none;
     text-transform: capitalize;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    transition: .75s ease;
+}
+
+.error:last-child {
+    margin-bottom: 0;
+}
+
+span.error.display-block {
+    display: block !important;
 }
 
 html, body.contacts {
@@ -270,7 +284,7 @@ div.contact-form.container {
 
 div.map.container {
     height: 350px;
-    padding: 12px;
+    padding: 10px;
 }
 
 div.contact-form.container .flex {
@@ -294,6 +308,10 @@ div.contact-form.container .flex.center {
         height: auto;
         padding: 2%;
         max-height: calc(370px + 2%);
+    }
+
+    div.map.container {
+        padding: 2%;
     }
 
     div.contact-info.container, div.map.container {
@@ -341,6 +359,11 @@ div.contact-form.container .flex.center {
 }
 
 @media only screen and (min-width: 653px) {
+
+    div.map.container {
+        padding: 0;
+        padding-top: 1.2rem;
+    }
 
     html, body.contacts {
         max-height: unset;
@@ -419,10 +442,11 @@ div.contact-form.container .flex.center {
         min-height: 400px;
         height: auto;
         background: linear-gradient(45deg, #880505ec, #8b2020ec);
-        border-radius: 8px;
+        /*border-radius: 8px;*/
         width: 90%;
         font-family: 'Century Gothic', 'Futura', 'Didact Gothic', san-serif;
         color: #ffffff;
+        max-width: unset;
     }
 
     div.contact-form div.left {
@@ -453,6 +477,7 @@ div.contact-form.container .flex.center {
         width: 100%;
         min-height: 200px;
         overflow-wrap: break-word;
+        max-height: 650px;
     }
 
     div.contact-form div.right > * {
@@ -498,7 +523,7 @@ div.contact-form.container .flex.center {
     div.contact-form div.right input[type="submit"] {
         margin: 15px 0px;
         width: 50%;
-        background-color: #f0f0f0;
+        background-color: #e6e6e6;
         font-size: larger;
         font-weight: 800;
     }
@@ -535,12 +560,14 @@ div.contact-form.container .flex.center {
     }
 
     div.contact-form div.left img {
-        width: 50%;
+        width: 60%;
         height: auto;
+        user-select: none;
+        -webkit-user-drag: none;
     }
 
     div.contact-info ul.list {
-        border-bottom: 10px groove #a60000;
+        border-bottom: 10px solid #a60000;
     }
 }
 
@@ -567,6 +594,11 @@ div.contact-form.container .flex.center {
 
 @media only screen and (min-width: 1200px) {
 
+    .error {
+        color: red;
+        text-shadow: none;
+    }
+
     div.contact-form div.left, 
     div.contact-form div.right {
         display: flex !important;
@@ -586,6 +618,10 @@ div.contact-form.container .flex.center {
         font-weight: 800;
         text-align: start;
         padding: 1rem 30px;
+    }
+
+    div.contact-form div.right div textarea {
+        max-height: 450px;
     }
 
     div.form-input-cont input {
@@ -631,6 +667,7 @@ div.contact-form.container .flex.center {
         background: linear-gradient(-155deg, #e7e7e7, #f0f0f0);
         color: #000000;
         text-transform: uppercase;
+        max-width: 1140px;
     }
 
     div.contact-info.container {
@@ -642,8 +679,6 @@ div.contact-form.container .flex.center {
         min-height: 550px;
         max-height: 1140px;
         height: 100%;
-        padding: 0;
-        margin-top: 1.5rem;
         max-width: 1140px;
     }
 }
