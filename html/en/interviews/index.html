@@ -12,8 +12,7 @@
 <title>GALILEO - private primary English language school</title>
 <link rel="shortcut icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon">
 <link rel="icon" href="../../../favicon.ico" type="image/vnd.microsoft.icon">
-<meta name="copyright" content="© 2019, GALILEO SCHOOL, s.r.o.">
-
+<meta name="copyright" content="© 2020, GALILEO SCHOOL, s.r.o.">
 <!-- Style -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
@@ -54,7 +53,7 @@
 </head>
 <body>
     <div id="modal-background" class="no-display"></div>
-    <header class="flex">
+    <header class="flex column">
         <!-- Header -->
 <!-- The header usually contains the logo and a navigation bar -->
 <!-- Navigation bar -->
@@ -102,15 +101,28 @@
     <ul id="main-nav" class="navbar">
         <!-- Each of these li (list item) elements represents a button in our menu -->
 <li onclick="location.href='../../en/index.html'" class="nav-elem">
-    <div class="nav-elem-text">Main Page</div>
+    <div class="nav-elem-text">Home</div>
 </li>
-<li onclick="location.href='#'" class="nav-elem">
-    <div class="nav-elem-text">About Us</div>
+<li class="nav-elem dropdown closed">
+    <div class="nav-elem-text sub-menu-btn closed">About Us</div>
+    <div class="sub-menu block container">
+        <ul class="sub-menu list flex column">
+            <li>Kindergarten</li>
+            <li>Primary School</li>
+            <li>High School</li>
+        </ul>
+    </div>
 </li>
+<!-- <li onclick="location.href='#'" class="nav-elem">
+    <div class="nav-elem-text">News</div>
+</li> -->
 <li onclick="location.href='https://galileoschool.edupage.org/znamky/'" class="nav-elem">
     <div class="nav-elem-text">Edupage</div>
 </li>
-<li onclick="location.href='#'" class="nav-elem">
+<li onclick="location.href='../../en/interviews/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Graduates</div>
+</li>
+<li onclick="location.href='../../en/admissions/index.html'" class="nav-elem">
     <div class="nav-elem-text">Admissions</div>
 </li>
 <li onclick="location.href='../../en/contact us/index.html'" class="nav-elem">
@@ -120,9 +132,6 @@
 
     <ul id="sub-nav" class="navbar">
         <!-- Each of these li (list item) elements represents a button in our menu -->
-<li onclick="location.href='../../en/interviews/index.html'" class="nav-elem">
-    <div class="nav-elem-text">Interviews</div>
-</li>
 <li onclick="location.href='#'" class="nav-elem">
     <div>Student Web Projects</div>
 </li>
@@ -133,24 +142,34 @@
     <ul id="nav-phone-list" class="phone-nav">
         <!-- Each of these li (list item) elements represents a button in our menu -->
 <li onclick="location.href='../../en/index.html'" class="nav-elem">
-    <div class="nav-elem-text">Main Page</div>
+    <div class="nav-elem-text">Home</div>
 </li>
-<li onclick="location.href='#'" class="nav-elem">
-    <div class="nav-elem-text">About Us</div>
+<li class="nav-elem dropdown closed">
+    <div class="nav-elem-text sub-menu-btn closed">About Us</div>
+    <div class="sub-menu block container">
+        <ul class="sub-menu list flex column">
+            <li>Kindergarten</li>
+            <li>Primary School</li>
+            <li>High School</li>
+        </ul>
+    </div>
 </li>
+<!-- <li onclick="location.href='#'" class="nav-elem">
+    <div class="nav-elem-text">News</div>
+</li> -->
 <li onclick="location.href='https://galileoschool.edupage.org/znamky/'" class="nav-elem">
     <div class="nav-elem-text">Edupage</div>
 </li>
-<li onclick="location.href='#'" class="nav-elem">
+<li onclick="location.href='../../en/interviews/index.html'" class="nav-elem">
+    <div class="nav-elem-text">Graduates</div>
+</li>
+<li onclick="location.href='../../en/admissions/index.html'" class="nav-elem">
     <div class="nav-elem-text">Admissions</div>
 </li>
 <li onclick="location.href='../../en/contact us/index.html'" class="nav-elem">
     <div class="nav-elem-text">Contact Us</div>
 </li>
         <!-- Each of these li (list item) elements represents a button in our menu -->
-<li onclick="location.href='../../en/interviews/index.html'" class="nav-elem">
-    <div class="nav-elem-text">Interviews</div>
-</li>
 <li onclick="location.href='#'" class="nav-elem">
     <div>Student Web Projects</div>
 </li>

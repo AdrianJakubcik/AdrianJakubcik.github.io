@@ -1,6 +1,91 @@
 /* imports have to be on top of the css file, this file is put on top (because "_" comes before any letter) */
 @import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
 
+#interviews-heading.admissions {
+    display: block !important;
+    font-size: xxx-large;
+    padding: 8px;
+    margin-top: 18px;
+    font-style: italic;
+    color: rgba(209, 57, 57, 0.925);
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+div.card-deck.admissions {
+    text-align: center;
+    align-items: center;
+    padding: 2rem 0.5rem;
+}
+
+div.card-deck div.card.admiss {
+    background-color: #a60000;
+    color: white;
+    border-radius: 0;
+    border: none;
+    max-width: 80%;
+    width: 100%;
+}
+
+div.card-deck div.card.admiss img {
+    display: none;
+}
+
+div.card-deck div.card.admiss:last-child {
+    margin-bottom: 0;
+}
+
+div.card-deck div.card.admiss > .card-title {
+    width: 100%;
+    text-transform: uppercase;
+    font-family: 'Century Gothic', 'Futura', 'Didact Gothic', san-serif;
+    font-size: 6vw;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    padding: 4px 12px;
+}
+
+@media screen and (min-width: 670px) {
+
+    div.card-deck.admissions {
+        justify-content: space-evenly;
+    }
+
+    div.card-deck div.card.admiss {
+        max-width: fit-content;
+    }
+
+    div.card-deck div.card.admiss:hover {
+        cursor: pointer;
+        background-color: #c40000;
+        transform: scale(1.05);
+        transition: ease .35s;
+    }
+
+    div.card-deck div.card.admiss img {
+        display: block;
+    }
+
+    div.card-deck div.card.admiss > .card-title {
+        border-top: 1px solid white;
+        font-size: 1.25rem;
+        padding: 8px 18px;
+    }
+
+}
+
+@media screen and (min-width: 1000px) {
+
+    div.card-deck div.card.admiss > .card-title {
+        border-top: 1px solid white;
+        font-size: 1.5rem;
+        padding: 10px 22px;
+    }
+
+    div.card-deck div.card.admiss {
+        max-width: 500px;
+    }
+}
 /* Default viewport is for phones */
 
 #carousel {
@@ -435,7 +520,7 @@ div.contact-form.container .flex.center {
     }
 
     div.contact-form.container {
-        display: flex;
+        display: none;
         flex-direction: row;
         justify-content: space-between;
         padding: 0;
@@ -711,6 +796,10 @@ div.contact-form.container .flex.center {
     transition: linear .15s;
 }
 
+.card.index:last-child {
+    margin-bottom: 0 !important;
+}
+
 .card.index > .card-body{
     font-style: italic;
     color: #dddddd;
@@ -863,7 +952,6 @@ hr {
 .card-deck.interview:last-child .card.interview:last-child {
     margin-bottom: 0;
 }
-
 .card.interview > .card-title {
     width: 100%;
     text-transform: uppercase;
@@ -955,16 +1043,14 @@ hr {
         z-index: 6;
         top: 0;
         height: 100vh;
-        width: 60vw;
+        width: 70%;
         margin: auto;
-        left: 25%;
-        right: 60%;
+        left: 22%;
         text-align: center;
         -webkit-box-shadow: 0px 0px 8px 2px rgba(92,92,92,1);
         -moz-box-shadow: 0px 0px 8px 2px rgba(92,92,92,1);
         box-shadow: 0px 0px 8px 2px rgba(92,92,92,1);
         overflow: auto;
-        border-radius: 1%;
         transition: .55s ease;
         overflow: -moz-scrollbars-none;
         -ms-overflow-style: none;
@@ -1081,7 +1167,7 @@ hr {
     }
 
     #modal-close {
-        right: 2%;
+        right: 0;
         z-index: 5;
         top: 15px;
         padding: 7px;
@@ -1146,6 +1232,8 @@ hr {
     .card.interview > img {
         user-select: none;
         -webkit-user-drag: none;
+        height: 42%;
+        object-fit: cover;
     }
 
     .card.interview > .card-title {
@@ -1227,6 +1315,10 @@ hr {
 
 @media only screen and (min-width: 1024px) {
 
+    #modal-close {
+        right: 2%;
+    }
+
     .card.interview > .card-body > ul > li > img {
         border-radius: 10px;
         max-width: 250px;
@@ -1289,8 +1381,8 @@ hr {
 
     #modal-box {
         max-height: 100vh;
-        max-width: calc(1200px * 0.6);
-        left: 35%;
+        max-width: calc(60% * 0.9);
+        left: 25%;
         right: 60%;
     }
 
@@ -1355,7 +1447,10 @@ nav {
     margin-bottom: 0;
 }
 
-.phone-menu li:hover {
+.phone-menu li:not(.dropdown):hover,
+ul.sub-menu > li:hover,
+.phone-menu li div.closed:active,
+.phone-menu li div.opened {
     background-color: #c40000;
     color: #ffffff;
     cursor: pointer;
@@ -1618,6 +1713,54 @@ li.nav-phone.title.searching {
     transition: .55s linear !important;
 }
 
+div.sub-menu-btn.closed::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-size: large;
+    color: #ffffff;
+    content: "\f0d7";
+    margin-left: 8px;
+}
+
+div.sub-menu-btn.opened::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-size: large;
+    color: #ffffff;
+    content: "\f0d8";
+    margin-left: 8px;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.sub-menu.block.container {
+    padding: 8px;
+    background-color: #990000;
+    /* background-color: #c40000; */
+    display: none;
+}
+
+ul.sub-menu.list {
+    list-style: none;
+    padding: 0;
+}
+
 /* Styles management based on screen width */
 
 /* Tablet style */
@@ -1629,6 +1772,9 @@ li.nav-phone.title.searching {
         cursor: pointer;
     }
 
+    div.language-select-btn:hover, div.nav-phone.light-gray.lang.lang-text {
+        cursor: pointer;
+    }
     #langBtn:hover, .lang-text:hover {
         cursor: pointer;
         background-color: #eeeeee;
@@ -1830,12 +1976,54 @@ li.nav-phone.title.searching {
         color: #ffffff;
     }
 
-    .nav-desk li:hover {
+    .nav-desk li:hover,
+    .nav-desk li.nav-elem.dropdown.opened {
         box-shadow: 0px 0px 33px -14px rgba(0, 0, 0, 0.2);
-        transform: scale(1.05);
         background-color: #c60000;
         transition: linear 0.2s;
     }
+
+    .nav-desk li:not(.dropdown):hover {
+        transform: scale(1.05);
+    }
+
+    .nav-desk li.nav-elem.dropdown div.sub-menu {
+        position: absolute;
+        top: 52px;
+        z-index: 5;
+        width: auto;
+        padding: 16px;
+    }
+
+    .nav-desk li.nav-elem.dropdown div.sub-menu ul,
+    .nav-desk li.nav-elem.dropdown div.sub-menu ul li {
+        position: relative;
+        width: auto;
+        overflow-wrap: unset;
+        text-align: center;
+    }
+
+    .nav-desk li.nav-elem.dropdown div.sub-menu ul {
+        width: max-content;
+    }
+
+    .nav-desk li.nav-elem.dropdown div.sub-menu ul li {
+        padding: 0.75rem 1.5em;
+    }
+
+    /* .nav-desk li.nav-elem.dropdown div.sub-menu ul li::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 600;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1.5;
+        font-size: medium;
+        color: #ffffff;
+        margin-right: 10px;
+        content: "\f30b";
+    } */
 
     .nav-elem {
         display: flex;

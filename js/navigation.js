@@ -11,6 +11,7 @@ $(document).ready(function () {
     const searchBtnExitImgSrc = getCloseImgUrl(searchBtnImgSrc, 'close_black');
     const searchBtn = $("#search");
     const langBtn = $("#langBtn");
+    const dropdowns = document.querySelectorAll("li div.sub-menu-btn");
 
     var isSearching = false;
     var viewport = new Viewport($(window).innerWidth(),$(window).innerHeight());
@@ -46,6 +47,16 @@ $(document).ready(function () {
     searchBtn.click(function(e){
         toggleSearch();
     });
+
+    for (var btn of dropdowns) {
+        $(btn.parentElement).click(e => {
+            if (e.target.childElementCount == 0)
+                e.target = e.target.parentElement;
+            $(e.target.children[1]).slideToggle("normal");
+            $(e.target.children[0]).toggleClass('closed opened');
+            $(e.target).toggleClass('closed opened');
+        });
+    }
 
 
     /*  Functions Section   */
