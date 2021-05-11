@@ -33,6 +33,138 @@ div.card-deck div.card.admiss img {
     display: none;
 }
 
+div.modal.admissions {
+    background-color: #a60000;
+    color: white;
+    display: none;
+}
+
+div.modal-text-wrapper h6.title {
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+div.modal-text-wrapper h6.sub-title {
+    margin-bottom: 2rem;
+    border-top: 2px solid #cccccc;
+    border-bottom: 2px solid #cccccc;
+    padding: 12px 0px;
+    font-weight: bold;
+}
+
+div.modal-text-wrapper h5,
+div.modal-text-wrapper h6 {
+    margin-bottom: 1.25rem;
+}
+
+div.modal-text-wrapper h5 {
+    font-size: large;
+}
+
+div.modal-text-wrapper h6 a {
+    color: rgb(77, 160, 255);
+}
+
+div.modal-text-wrapper div.heading {
+    display: block;
+}
+
+div.modal-text-wrapper div.heading {
+    padding: 4px;
+    margin-bottom: 4px;
+}
+
+div.modal-text-wrapper div.heading div {
+    padding: 4px;
+}
+
+div.modal-text-wrapper div.heading div img {
+    max-width: 64px;
+    height: auto;
+}
+
+div.modal-text-wrapper ol {
+    padding-left: 6px;
+}
+
+.flex.row {
+    flex-direction: row;
+}
+
+div.modal-text-wrapper .box {
+    border: 2px solid #919191;
+    padding: 5px;
+    margin-bottom: 1rem;
+}
+
+div.modal-text-wrapper > ol > p.warning::before,
+div.modal-text-wrapper > ol > p.warning::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f12a";
+    font-size: larger;
+    color: yellow;
+    margin: 0px 5px;
+}
+
+div.modal-text-wrapper > ol > li > p {
+    letter-spacing: 0.5px;
+    /* font-family: 'Century Gothic', 'Futura', 'Didact Gothic', san-serif; */
+}
+
+div.modal-text-wrapper > ol > li > h6 {
+    font-family: 'Century Gothic', 'Futura', 'Didact Gothic', san-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 1.25rem;
+}
+
+div.modal-text-wrapper > ol > li > p.no-margin,
+div.modal-text-wrapper > ol > li > div > p.no-margin {
+    margin-bottom: 0;
+}
+
+div.modal-text-wrapper > ol > li > ul,
+div.modal-text-wrapper > ol > li > div > ul {
+    list-style: none;
+    font-weight: bold;
+    padding-left: 0px;
+    padding-bottom: 12px;
+    margin-bottom: 8px;
+    font-family: 'Century Gothic', 'Futura', 'Didact Gothic', san-serif;
+    font-size: medium;
+}
+
+div.modal-text-wrapper * {
+    font-family: 'Century Gothic', 'Futura', 'Didact Gothic', san-serif !important;
+}
+
+div.modal-text-wrapper > ol > li > ol.abc {
+    list-style-type: lower-latin;
+}
+
+div.modal-text-wrapper > ol > li > ol li {
+    margin-bottom: .5rem;
+}
+
+div.modal-close.admissions {
+    background-color: rgba(200,200,200,0.7);
+    /* border-radius: 0px !important; */
+    border: 1px solid rgba(170,170,170,0.7);
+}
+
+div.modal-close.admissions img {
+    max-width: 32px;
+    height: auto;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
+
 /* div.card-deck div.card.admiss:last-child {
     margin-bottom: 0;
 } */
@@ -78,6 +210,11 @@ div.card-deck div.card.admiss > .card-title {
         border-bottom: 1px solid white;
     }
 
+    div#modal-close.modal-close.admissions {
+        right: 1%;
+        z-index: 7;
+    }
+
 }
 
 @media screen and (min-width: 1000px) {
@@ -88,7 +225,10 @@ div.card-deck div.card.admiss > .card-title {
         padding: 10px 22px;
     }
 
-    
+    div#modal-close.modal-close.admissions {
+        right: 2%;
+        z-index: 7;
+    }
 }
 /* Default viewport is for phones */
 
@@ -1396,6 +1536,72 @@ hr {
     }
 
 } 
+div.modal {
+    max-height: 100vh;
+    max-width: 100vw;
+    height: 100%;
+    width: 100%;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    outline: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 6;
+    padding: 6px;
+}
+
+div.modal div.modal-inner-wrapper,
+div.modal-inner-wrapper div.modal-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Century Gothic', 'Futura', 'Didact Gothic', san-serif;
+    padding: 8px;
+}
+
+div.modal-text-wrapper p,
+div.modal-text-wrapper ol,
+div.modal-text-wrapper ul,
+div.modal-text-wrapper span {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+div.modal-close {
+    background-color: #cccccc;
+    border-radius: 0px;
+    border: 1px solid gray;
+}
+
+@media screen and (min-width: 670px) {
+    div#modal-box.modal {
+        display: none;
+        position: fixed;
+        flex-direction: column;
+        padding: 6px;
+        outline: 0;
+        z-index: 6;
+        max-width: 80%;
+        width: 80%;
+        height: 100vh;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    div.modal-close {
+        z-index: 7;
+        right: 1%;
+    }
+}
 /* In general, we are using vw (view-width) units = browser's content window width */
 /* vw units will scale with the content window -> responsive website */
 
