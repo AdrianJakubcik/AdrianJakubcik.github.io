@@ -41,7 +41,14 @@
         <div class="left">
             <!-- Search button -->
             <div class="search-container close">
-                <input type="search" name="searchInp" onchange="sendSearch(this.value, 'search.html')" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)" id="search_box" />
+                <!-- <input type="search" name="searchInp" id="searchInp" onchange="sendSearch(this.value, 'search.html')" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)" id="search_box" /> -->
+                <input type="search" name="searchInp" id="search_box" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)"/>
+                <script>
+                    document.getElementById('search_box').addEventListener('keypress', (e) =>{
+                        if(e.keyCode === 13 && e.target.value.length > 2)
+                            sendSearch(e.target.value, 'search.html');
+                    });
+                </script>
             </div>
             <div id="search" class="nav-phone search">
                 <img id="search-img" src="../../images/icons/search.png">
@@ -91,8 +98,7 @@
     <div class="sub-menu block container">
         <ul class="sub-menu list flex column">
             <li id="kindergarten" onclick="location.href='../sk/school/kindergarten/index.html'">Škôlka</li>
-            <li id="primaryschool" onclick="location.href='../sk/school/primarySchool/index.html
-'">Základná Škola</li>
+            <li id="primaryschool" onclick="location.href='../sk/school/primarySchool/index.html'">Základná Škola</li>
             <li id="highschool" onclick="location.href='../sk/school/highSchool/index.html'">Gymnázium</li>
         </ul>
     </div>
@@ -133,8 +139,7 @@
     <div class="sub-menu block container">
         <ul class="sub-menu list flex column">
             <li id="kindergarten" onclick="location.href='../sk/school/kindergarten/index.html'">Škôlka</li>
-            <li id="primaryschool" onclick="location.href='../sk/school/primarySchool/index.html
-'">Základná Škola</li>
+            <li id="primaryschool" onclick="location.href='../sk/school/primarySchool/index.html'">Základná Škola</li>
             <li id="highschool" onclick="location.href='../sk/school/highSchool/index.html'">Gymnázium</li>
         </ul>
     </div>

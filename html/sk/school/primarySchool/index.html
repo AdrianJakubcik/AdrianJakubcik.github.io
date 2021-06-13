@@ -41,7 +41,14 @@
         <div class="left">
             <!-- Search button -->
             <div class="search-container close">
-                <input type="search" name="searchInp" onchange="sendSearch(this.value, 'search.html')" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)" id="search_box" />
+                <!-- <input type="search" name="searchInp" id="searchInp" onchange="sendSearch(this.value, 'search.html')" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)" id="search_box" /> -->
+                <input type="search" name="searchInp" id="search_box" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)"/>
+                <script>
+                    document.getElementById('search_box').addEventListener('keypress', (e) =>{
+                        if(e.keyCode === 13 && e.target.value.length > 2)
+                            sendSearch(e.target.value, 'search.html');
+                    });
+                </script>
             </div>
             <div id="search" class="nav-phone search">
                 <img id="search-img" src="../../../../images/icons/search.png">
@@ -91,8 +98,7 @@
     <div class="sub-menu block container">
         <ul class="sub-menu list flex column">
             <li id="kindergarten" onclick="location.href='../../../sk/school/kindergarten/index.html'">Škôlka</li>
-            <li id="primaryschool" onclick="location.href='../../../sk/school/primarySchool/index.html
-'">Základná Škola</li>
+            <li id="primaryschool" onclick="location.href='../../../sk/school/primarySchool/index.html'">Základná Škola</li>
             <li id="highschool" onclick="location.href='../../../sk/school/highSchool/index.html'">Gymnázium</li>
         </ul>
     </div>
@@ -133,8 +139,7 @@
     <div class="sub-menu block container">
         <ul class="sub-menu list flex column">
             <li id="kindergarten" onclick="location.href='../../../sk/school/kindergarten/index.html'">Škôlka</li>
-            <li id="primaryschool" onclick="location.href='../../../sk/school/primarySchool/index.html
-'">Základná Škola</li>
+            <li id="primaryschool" onclick="location.href='../../../sk/school/primarySchool/index.html'">Základná Škola</li>
             <li id="highschool" onclick="location.href='../../../sk/school/highSchool/index.html'">Gymnázium</li>
         </ul>
     </div>
@@ -233,10 +238,104 @@
     </a>
 </div>
         <div id="interviews-heading" class="admissions">Základná Škola</div>
+
+        <div class="card-deck about">
+            <div class="card about">
+        <div class="card-img">
+            
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Moderná škola</h3>
+                </div>
+                <div class="card-text short">
+                    <p>Moderná škola dokáže okamžite reagovať na aktuálne potreby spoločnosti. Koronarok preveril pripravenosť školy GALILEO SCHOOL preniesť výučbu do on-line priestoru. V súčasnosti sa aktivity školy sústreďujú na socializáciu žiakov, ich návrat do kolektívu. Uvedomujeme si, že žiakov pripravujeme na pracovné pozície, ktoré dnes ešte neexistujú. V tom je modernosť a vizionárstvo GALILEO SCHOOL.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Teoretických článkov o tom, čo je to moderná škola, alebo škola 21. storočia, bolo popísaných neúrekom. Z nášho pohľadu je moderná škola taká, ktorá dokáže okamžite reagovať na podnety a situácie, na momentálne potreby spoločnosti a nové výzvy pripravenosti detí na samotný život.</p><br><p>Jednou z kompetencií 21. storočia je aj digitálna gramotnosť. Vybavenosť školy IT technikou sa stala kritériom hodnotenia zariadenia. A doba koronová túto pripravenosť škôl preverila nekompromisne. V čase všeobecného kolapsu vzdelávacieho systému GALILEO SCHOOL prešla na kompletné on-line vzdelávanie. Pod taktovkou našich učiteľov vznikali programy, ktoré sme ponúkli celému Slovensku – napríklad celý súbor diktátov, čítaných známymi hercami a umelcami.</p><br><p>Doba postkoronová priniesla však nové potreby. Hoci sa svet a spoločnosť mení, napreduje závratným tempom, škola aj v 21. storočí bude mať rovnakú úlohu - vzdelávať a vychovávať mladých ľudí. Problematika sociálnych zručností a morálky sa ukázala ako kľúčová. A moderná škola reaguje na potreby spoločnosti okamžite.</p><br><p>Napriek rýchlym zmenám vo vede a technike, človek vo svojej podstate zostáva stále rovnaký. Emočné procesy a ich priebeh sa nemenia, a ich zvládanie je v dnešnom, na podnety oveľa bohatšom svete, oveľa náročnejšie. V tomto smere hrá moderná škola naozaj nezameniteľnú úlohu. Morálna výchova sa stáva nielen predmetom vyučovaným s určitou periodicitou, ale prelína sa všetkými predmetmi, stáva sa bežnou súčasťou každodenného života v škole, doma, je súčasťou konania jednotlivca.</p><br><p>Podmienky na osvojenie si morálneho a sociálneho chovania sa nevytvárajú len kvalitným kurikulom. Dôležitú úlohu hrá osobnosť učiteľa, ktorý sám musí ísť príkladom, vykonáva svoju prácu s nadšením, odovzdanosťou, svedomite sa pripravuje na vyučovacie hodiny. Sám tak podnecuje záujem žiakov o problematiku a snahu svedomite pristupovať ku svojej práci. Rovnako dôležitým aspektom je prístup ku žiakovi, keď zo žiaka sa stáva partner. Ak nie je dieťa nútené zakrývať nevedomosť klamstvom, /často spočívajúcu nie v lenivosti a neochote spolupracovať, ale v nedostatočnom porozumení či pomalšom chápaní /, nemusí si vymýšľať výhovorky, je preň oveľa ľahšie chovať sa morálne. Ak učiteľ nestavia vlastnú osobu do role vševedúceho a nechybujúceho mentora, a sám je príkladom neustálej práce na sebe samom, zbavuje dieťa pocitu menejcennosti a otvára mu priestor ku akceptácii seba samého ako jedinečnej bytosti, ktorá prekonáva vlastné nedostatky úsilím, nebojí sa chýb, ktoré sú stálou súčasťou života, ale učí sa ich naprávať a poučiť sa z nich.</p><br><p>Súčasťou vyučovania je rozvoj všetkých morálnych vlastností, potláčanie agresivity, rozvoj emocionálnej inteligencie, sebareflexie, výchova zdravej osobnosti.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div><div class="card about">
+        <div class="card-img">
+            
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Nadnárodná škola</h3>
+                </div>
+                <div class="card-text short">
+                    <p>GALILEO SCHOOL chce osloviť rodičov, ktorí hľadajú školu s vyučovacím jazykom anglickým, s individuálnym prístupom k žiakom, školu, v ktorej počítač a internet je prirodzenou súčasťou vyučovacieho procesu.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>Európa, Európska Únia - to sú dnes hádam najskloňovanejšie slová. A jedným dychom dodávame, že cestu do Európy otvárame predovšetkým svojim deťom. Tento fakt však kladie nejednu úlohu aj pred nás. Na cestu do EÚ musíme nasledujúcu generáciu dostatočne vybaviť. Vzdelaním a v neposlednom rade dorozumievacím prostriedkom - jazykom.</p><br><p>Snahy o zavedenie výučby cudzieho jazyka sa presúvajú do stále nižších vekových kategórií. Práve malé deti si hravo a bez pocitu učenia sa dokážu osvojiť v pomerne krátkom čase kvalitné základy budúcich jazykových znalostí.</p><br><p>GALILEO SCHOOL vo svojom programe spája požiadavky na intenzívnu výučbu jazykov a zároveň náročné požiadavky obsahových štandardov schválených Ministerstvom školstva SR. Výučba predmetov prebieha v anglickom jazyku pomocou originálnych anglicky písaných učebníc. Iba slovenský jazyk je vyučovaný po slovensky v plnom rozsahu schválených učebných plánov, s kompletnou hodinovou dotáciou. Matematika prebieha v slovenskom i anglickom jazyku.</p><br><p>Naša škola je schválená Ministerstvom školstva SR a je zaradená do siete škôl SR. Garanciu nad učebným procesom prevzal rektor Univerzity Konštantína Filozofa v Nitre.</p><br><p>GALILEO SCHOOL chce osloviť rodičov, ktorí odmietajú tradičné formy výučby a hľadajú školu s individuálnym prístupom k žiakom, školu, v ktorej počítač a internet je prirodzenou súčasťou vyučovacieho procesu.</p><br><p>Nízky počet žiakov v triede cca 16 detí, kvalitné vybavenie a skúsený učiteľský zbor s inovačnými ambíciami sú zárukou vysokej kvality vzdelávania.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div><div class="card about">
+        <div class="card-img">
+            
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Bilingválna škola</h3>
+                </div>
+                <div class="card-text short">
+                    <p>Programy Európskej únie propagujú názor, že v stredoeurópskom priestore by mal každý ovládať aspoň pasívne tri jazyky. Je to možné dosiahnuť, ak sa s inojazyčnou výučbou začne už v predškolskom veku.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>S pojmom bilingválny sa stretávame skôr v kategórii stredných škôl - predovšetkým gymnázií.</p><br><p>Je všeobecne známe, že schopnosť osvojiť si, teda naučiť sa cudzí jazyk vekom klesá. Na základe vedeckých pozorovaní za optimálne obdobie nadobúdania inojazyčných schopností sa považuje vek medzi 2. a 13. rokom života. Bádatelia v oblasti psycholingvistiky, ako napr. S. D. Krashan kladie ideálny limit už do predškolského veku, do obdobia 5 - 6 rokov.</p><br><p>Ľahšie osvojovanie si cudzích jazykov v detskom veku sa dáva do súvislosti:</p><br><p>- S plasticitou a flexibilitou vyššej nervovej činnosti v detskom veku, ktorá sa po období dospievania stráca.</p><br><p>- S biologickou preddispozíciou a tzv. imprintingom (vpečatením). Podľa nositeľa Nobelovej ceny K. Lorenza, ak sa nevyužije toto obdobie pre učenie sa druhému jazyku, stratí sa šanca naučiť sa cudzí jazyk ľahko a efektívne bez vynaloženia veľkej námahy.</p><br><p>- S fyziologickými procesmi tzv. lateralizácie, t.j. postupného umiestňovania rečových centier v ľavej hemisfére mozgu (u pravákov). Tento proces končí v puberte a tým spravidla končí aj optimálne obdobie pre osvojovanie si cudzieho jazyka.</p><br><p>- S tzv. nešpecifickou cestou t.j. spôsob osvojovania si cudzieho jazyka v prirodzených hrových situáciách.</p><br><p>- S časovým faktorom. Na rozdiel od učenia sa v lavici, keď je žiak v kontakte s jazykom iba určitú hodinu, pri nešpecifickom učení je počet hodín určený pre jazykovú stimuláciu podstatne väčší.</p><br><p>- S prirodzenou výslovnosťou v cudzom jazyku, ktorá sa spravidla dá získať iba v detstve. (potvrdzujú to výskumy J. Ashera a R. Garciu)</p><br><p>Súkromná základná škola GALILEO SCHOOL ráta aj s vlastnou prípravou svojich žiakov na bilingválnu výučbu. Tomuto slúži trieda predškolákov materskej školy GALILEO SCHOOL určená deťom vo veku od piatich do šiestich rokov. Kombinácia anglického a slovenského jazyka nie je obmedzujúca pri výbere školy ani vo vyšších ročníkoch. Preto sme sa rozhodli povinné predmety slovenský jazyk a čiastočne aj matematiku vyučovať v slovenskom jazyku rešpektujúc obsahové a výkonové štandardy schválené Ministerstvom školstva Slovenskej republiky platné pre základné školy.</p><br><p>Programy Európskej únie Sokrates a Leonardo da Vinci propagujú názor, že v stredoeurópskom priestore by mal každý ovládať aspoň pasívne tri jazyky. Je to možné dosiahnuť, ak sa s inojazyčnou výučbou začne už v predškolskom veku.</p><br><p>Ďakujeme PhDr. Oľge Árochovej, CSc. Za poskytnuté materiály, z ktorých sme vychádzali v tejto kapitole.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div><div class="card about">
+        <div class="card-img">
+            
+        </div>
+        <div class="card-content">
+            <div>
+                <div class="card-title">
+                    <h3>Tvorivá škola</h3>
+                </div>
+                <div class="card-text short">
+                    <p>V tvorivej škole žiak nemusí memorovať množstvo údajov, učí sa ich nachádzať, pracovať s nimi a aplikovať ich do praxe.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text long">
+                <p>V tvorivej škole sa žiak sám aktívne zapája do vyučovacieho procesu, učivo si osvojuje vlastným bádaním, s pomocou učiteľa si dokáže aj sám vyhľadáva informácie ku danej téme a následne ich spracúva vo forme projektu, či príspevku do diskusie. Učivo tak prijíma nenásilne a prirodzene, nachádza priamu súvislosť medzi teoretickými poznatkami a ich využitím v praktickom živote. Učí sa chápať vzťah medzi dejmi, príčinami a následkami. Nachádza zmysel vzdelávania, otvárajúci fantastický svet poznania a prinášajúci radosť a uspokojenie.</p><br><p>Učiteľ vystupuje v úlohe koordinátora, ako riadiaci a usmerňujúci subjekt, ako pomoc pri vysvetľovaní a objasňovaní. Táto práca je veľmi náročná na osobnosť učiteľa a jeho prípravu na vyučovanie. Vyžaduje nutnosť osobného prístupu k žiakom, bližšie spoznanie každého z nich, voľbu vhodnej metódy a prístupu. Týmto sa však stáva tvorivou i pre samotného učiteľa a prináša mu široké možnosti využitia vlastných tvorivých schopností a následne väčšie uspokojenie z vlastnej práce.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="toggle-btn">...see more</button>
+            </div>
+        </div>
+    </div>
+
+        </div>
     </div>
 
     <!-- Scripts at the end to make sure everything else is already loaded. -->
     <script src="../../../../js/carousel.js"></script>
+    <script src="../../../../js/about.js"></script>
 </body>
 
 </html>

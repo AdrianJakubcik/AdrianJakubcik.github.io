@@ -41,7 +41,14 @@
         <div class="left">
             <!-- Search button -->
             <div class="search-container close">
-                <input type="search" name="searchInp" onchange="sendSearch(this.value, 'search.html')" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)" id="search_box" />
+                <!-- <input type="search" name="searchInp" id="searchInp" onchange="sendSearch(this.value, 'search.html')" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)" id="search_box" /> -->
+                <input type="search" name="searchInp" id="search_box" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)"/>
+                <script>
+                    document.getElementById('search_box').addEventListener('keypress', (e) =>{
+                        if(e.keyCode === 13 && e.target.value.length > 2)
+                            sendSearch(e.target.value, 'search.html');
+                    });
+                </script>
             </div>
             <div id="search" class="nav-phone search">
                 <img id="search-img" src="../../../../images/icons/search.png">
@@ -91,8 +98,7 @@
     <div class="sub-menu block container">
         <ul class="sub-menu list flex column">
             <li id="kindergarten" onclick="location.href='../../../sk/school/kindergarten/index.html'">Škôlka</li>
-            <li id="primaryschool" onclick="location.href='../../../sk/school/primarySchool/index.html
-'">Základná Škola</li>
+            <li id="primaryschool" onclick="location.href='../../../sk/school/primarySchool/index.html'">Základná Škola</li>
             <li id="highschool" onclick="location.href='../../../sk/school/highSchool/index.html'">Gymnázium</li>
         </ul>
     </div>
@@ -133,8 +139,7 @@
     <div class="sub-menu block container">
         <ul class="sub-menu list flex column">
             <li id="kindergarten" onclick="location.href='../../../sk/school/kindergarten/index.html'">Škôlka</li>
-            <li id="primaryschool" onclick="location.href='../../../sk/school/primarySchool/index.html
-'">Základná Škola</li>
+            <li id="primaryschool" onclick="location.href='../../../sk/school/primarySchool/index.html'">Základná Škola</li>
             <li id="highschool" onclick="location.href='../../../sk/school/highSchool/index.html'">Gymnázium</li>
         </ul>
     </div>
@@ -249,7 +254,7 @@
             </div>
             <div class="card-body">
                 <div class="card-text long">
-                    <p>Súkromné gymnázium GALILEO SCHOOL si kladie za cieľ pripraviť svojich absolventov tak, aby pre nich neexistovali žiadne bariéry pre okamžitý a aktívny štart vo vysokoškolskom štúdiu. Neoceniteľnú rolu hrá schopnosť študenta akceptovať učivo na najvyššej úrovni vzdelávania v anglickom jazyku. Toto je možné dosiahnuť len priamo preberaním učiva jednotlivých predmetov strednej školy v tejto cudzej reči.</p>
+                <p>Súkromné gymnázium GALILEO SCHOOL si kladie za cieľ pripraviť svojich absolventov tak, aby pre nich neexistovali žiadne bariéry pre okamžitý a aktívny štart vo vysokoškolskom štúdiu. Neoceniteľnú rolu hrá schopnosť študenta akceptovať učivo na najvyššej úrovni vzdelávania v anglickom jazyku. Toto je možné dosiahnuť len priamo preberaním učiva jednotlivých predmetov strednej školy v tejto cudzej reči.</p>
                 </div>
             </div>
             <div class="card-footer">
@@ -271,7 +276,7 @@
             </div>
             <div class="card-body">
                 <div class="card-text long">
-                    <p>Vyučovanie v malých skupinách, moderný prístup k študentovi ako individualite, a formovanie obsahu vydelávania podľa individuálnych potrieb študenta. Každý študent is počas štúdia buduje portfólio vedomostí, zručností a medzinárodných certifikátov podľa vlastných záujmov a smerovania budúcej kariéry. Vyučovanie má v sebe zapracované využitie moderných technológií ako video z výkladu učiva, učebné materiály online, komunikáciu a zadania domácich úloh online prostredníctvom platformy Microsoft Teams a Office 365.</p>
+                <p>Vyučovanie v malých skupinách, moderný prístup k študentovi ako individualite, a formovanie obsahu vydelávania podľa individuálnych potrieb študenta. Každý študent is počas štúdia buduje portfólio vedomostí, zručností a medzinárodných certifikátov podľa vlastných záujmov a smerovania budúcej kariéry. Vyučovanie má v sebe zapracované využitie moderných technológií ako video z výkladu učiva, učebné materiály online, komunikáciu a zadania domácich úloh online prostredníctvom platformy Microsoft Teams a Office 365.</p>
                 </div>
             </div>
             <div class="card-footer">
@@ -293,7 +298,7 @@
             </div>
             <div class="card-body">
                 <div class="card-text long">
-                    <p>Dlhodobá spolupráca s našimi partnermi Microsoft a Cisco sa ukázala kľúčovou v nedávnom období celosvetovej pandémie. Plnohodnotné vyučovanie na 100% prebiehalo od prvého dňa počas uzavretia školy. Prístup k hodinám, materiálom, zadaniam a komunikácia online bez obmedzení v prostredí Microsft Teams dáva predpoklad k vyššej flexibilite individuálnzch študijných plánov, hybridnému modelu vyučovania a prístupe k vzdelaniu formou online learning.</p>
+                <p>Dlhodobá spolupráca s našimi partnermi Microsoft a Cisco sa ukázala kľúčovou v nedávnom období celosvetovej pandémie. Plnohodnotné vyučovanie na 100% prebiehalo od prvého dňa počas uzavretia školy. Prístup k hodinám, materiálom, zadaniam a komunikácia online bez obmedzení v prostredí Microsft Teams dáva predpoklad k vyššej flexibilite individuálnzch študijných plánov, hybridnému modelu vyučovania a prístupe k vzdelaniu formou online learning.</p>
                 </div>
             </div>
             <div class="card-footer">

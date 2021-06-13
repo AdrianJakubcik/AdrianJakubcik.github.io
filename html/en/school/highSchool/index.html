@@ -41,7 +41,14 @@
         <div class="left">
             <!-- Search button -->
             <div class="search-container close">
-                <input type="search" name="searchInp" onchange="sendSearch(this.value, 'search.html')" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)" id="search_box" />
+                <!-- <input type="search" name="searchInp" id="searchInp" onchange="sendSearch(this.value, 'search.html')" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)" id="search_box" /> -->
+                <input type="search" name="searchInp" id="search_box" onkeyup="searchSitesWithResult(this.value, 'search_results', false, true),searchInSite(this.value)"/>
+                <script>
+                    document.getElementById('search_box').addEventListener('keypress', (e) =>{
+                        if(e.keyCode === 13 && e.target.value.length > 2)
+                            sendSearch(e.target.value, 'search.html');
+                    });
+                </script>
             </div>
             <div id="search" class="nav-phone search">
                 <img id="search-img" src="../../../../images/icons/search.png">
@@ -234,7 +241,7 @@
         <div class="card-deck about">
             <div class="card about">
         <div class="card-img">
-            <img src="../../../../images/card_thumbnails/gym.jpg" class="card-img-top" alt="Picture Not Available!">
+            
         </div>
         <div class="card-content">
             <div>
@@ -247,7 +254,7 @@
             </div>
             <div class="card-body">
                 <div class="card-text long">
-                    <p>The teaching goal of GALILEO SCHOOL is to prepare students to overcome any barriers there might be to an immediate and smooth transition to the university studies. The ability of a student to understand the content of the subject in English language is essential for such. Hence acquiring the knowledge content and skills in academic subjects in English is the fundamental principle of GALILEO SCHOOL.</p>
+                <p>The teaching goal of GALILEO SCHOOL is to prepare students to overcome any barriers there might be to an immediate and smooth transition to the university studies. The ability of a student to understand the content of the subject in English language is essential for such. Hence acquiring the knowledge content and skills in academic subjects in English is the fundamental principle of GALILEO SCHOOL.</p>
                 </div>
             </div>
             <div class="card-footer">
@@ -256,7 +263,7 @@
         </div>
     </div><div class="card about">
         <div class="card-img">
-            <img src="../../../../images/card_thumbnails/primary_school.jpg" class="card-img-top" alt="Picture Not Available!">
+            
         </div>
         <div class="card-content">
             <div>
@@ -269,7 +276,7 @@
             </div>
             <div class="card-body">
                 <div class="card-text long">
-                    <p>Small class sizes, student-centred approach, and a focus on individual interest of a student. Students build a portfolio of knowledge, skills and international certificates tailored to their preferred future career. The teaching and learning use embedded streaming, lesson materials, communication and assignments online using Microsoft Teams and Office 365.</p>
+                <p>Small class sizes, student-centred approach, and a focus on individual interest of a student. Students build a portfolio of knowledge, skills and international certificates tailored to their preferred future career. The teaching and learning use embedded streaming, lesson materials, communication and assignments online using Microsoft Teams and Office 365.</p>
                 </div>
             </div>
             <div class="card-footer">
@@ -278,7 +285,7 @@
         </div>
     </div><div class="card about">
         <div class="card-img">
-            <img src="../../../../images/card_thumbnails/kindergarten.jpg" class="card-img-top" alt="Picture Not Available!">
+            
         </div>
         <div class="card-content">
             <div>
@@ -291,7 +298,7 @@
             </div>
             <div class="card-body">
                 <div class="card-text long">
-                    <p>Based on successful partnerships with Microsoft and Cisco the school has been recently able to provide the full academic teaching schedule via 100% online learning since the start of the pandemic. Students and teachers alike quickly adopted the online learning mode from the day one, exploring the benefits of modern technology and developing vital skills for future as a result of the pandemic. All resources, assignments, grades and communication are shared via the Microsoft Teams environment, with online classes streamed via Teams Meet or Cisco Webex Meet app.</p>
+                <p>Based on successful partnerships with Microsoft and Cisco the school has been recently able to provide the full academic teaching schedule via 100% online learning since the start of the pandemic. Students and teachers alike quickly adopted the online learning mode from the day one, exploring the benefits of modern technology and developing vital skills for future as a result of the pandemic. All resources, assignments, grades and communication are shared via the Microsoft Teams environment, with online classes streamed via Teams Meet or Cisco Webex Meet app.</p>
                 </div>
             </div>
             <div class="card-footer">
