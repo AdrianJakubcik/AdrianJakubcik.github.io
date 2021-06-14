@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- This indention is totally legal and we are 100% certain about this -->
 <html lang="en">
-
+    
 <head>
     <!-- Tells browser what character set we want. Default does not include SK characters -->
 <meta charset="utf-8">
@@ -28,9 +28,67 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="../../../../js/navigation.js"></script>
 <script src="../../../../js/searcher.js"></script>
+    <script src="../../../../js/modules/Modal.js"></script>
+    <style>
+        .modal-inner-wrapper,
+        .modal-text-wrapper,
+        .modal.fixed.admissions {
+            width: 100%;
+            height: 100%;
+            padding: 0 !important;
+        }
+
+        .modal a {
+            width: 100%;
+            margin: auto;
+            background-color: rgba(196, 196, 196, 0.8);
+            font-weight: bold;
+            padding: 4px;
+            font-size: medium;
+        }
+
+        .modal.pop-up {
+            max-width: 95%;
+            max-height: 20%;
+            display: none;
+            margin: auto;
+            margin-top: 0;
+            background-color: #a60000;
+            color: whitesmoke;
+            font-family: 'Century Gothic', 'Futura', 'Didact Gothic', sans-serif;
+        }
+
+        .modal.pop-up .content .body,
+        .modal.pop-up .content .footer {
+            padding: 4px;
+            font-size: small;
+        }
+        .modal.pop-up .content .footer {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: auto;
+        }
+
+        .modal.pop-up .content .footer button {
+            position: relative;
+            padding: 0px 8px;
+        }
+
+        .modal.pop-up .content .header {
+            padding: 6px;
+            font-size: medium;
+        }
+
+        .modal.pop-up .content,
+        .modal.pop-up .content > div {
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="modal-background" class="admissions no-display"></div>
     <!-- Header -->
 <!-- The header usually contains the logo and a navigation bar -->
 <!-- Navigation bar -->
@@ -70,7 +128,7 @@
         <div class="right">
 
             <!-- Language selection dropdown -->
-<div id="langBtn" onclick="location.href='../../../sk/school/highSchool/index.html'" class="nav-phone lang darker-gray">
+<div id="langBtn" onclick="location.href='../../../sk/school/summer/index.html'" class="nav-phone lang darker-gray">
     <div class="lang-text">SK</div>
 </div>
 
@@ -236,82 +294,120 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-</div> <div id="interviews-heading" class="admissions">High School</div>
+</div>
+        <!--  -->
 
-        <div class="card-deck about">
-            <div class="card about">
-        <div class="card-img">
-            
-        </div>
-        <div class="card-content">
-            <div>
-                <div class="card-title">
-                    <h3>Modern, accredited, recognised</h3>
-                </div>
-                <div class="card-text short">
-                    <p>Modern, accredited education in English language. The aim is to prepare students to enrol the best universities worldwide. GALILEO HIGH SCHOOL is accredited by the Ministry of Education and is the first International Pearson Edexcel Centre in Slovakia. This provides for the award of international qualification certificates recognised across the globe.</p>
-                </div>
+        <div class="card-deck index admissions">
+            <!-- Card 1 -->
+<div id="1" class="card admiss" onclick="Click(this)">
+    <h4 class="card-title">Summer School</h4>
+    <img src="../../../../images/card_thumbnails/primary_school.jpg" class="card-img-top" alt="Picture Not Available!">
+    <div class="no-display admiss-text">
+        <object data="../../../../files/summerschool/2021_ZS_EN.pdf" width="100%" height="100%" frameborder="0">
+            <script type="text/javascript">var iFramesSupported = false;</script>
+            <div class="alt-text">
+                <p>Previewing or manipulating a pdf file is not supported on your device's browser. We suggest you download the file and open it manually with a pdf reader.</p>
+                <a download href="../../../../files/summerschool/2021_ZS_EN.pdf">Download</a>
             </div>
-            <div class="card-body">
-                <div class="card-text long">
-                <p>The teaching goal of GALILEO SCHOOL is to prepare students to overcome any barriers there might be to an immediate and smooth transition to the university studies. The ability of a student to understand the content of the subject in English language is essential for such. Hence acquiring the knowledge content and skills in academic subjects in English is the fundamental principle of GALILEO SCHOOL.</p>
-                </div>
+        </object>
+    </div>
+</div>
+
+<!-- Card 2 -->
+<div id="2" class="card admiss" onclick="Click(this)">
+    <h4 class="card-title">Summer Kindergarten</h4>
+    <img src="../../../../images/card_thumbnails/kindergarten.jpg" class="card-img-top" alt="Picture Not Available!">
+    <div class="no-display admiss-text">
+        <object src="../../../../files/summerschool/2021_MS_EN.pdf" type="application/pdf" width="100%" height="100%" frameborder="0">
+            <script type="text/javascript">var iFramesSupported = false;</script>
+            <div class="alt-text">
+                <p>Previewing or manipulating a pdf file is not supported on your device's browser. We suggest you download the file and open it manually with a pdf reader.</p>
+                <a download href="../../../../files/summerschool/2021_MS_EN.pdf">Download</a>
             </div>
-            <div class="card-footer">
-                <button class="toggle-btn">...see more</button>
-            </div>
-        </div>
-    </div><div class="card about">
-        <div class="card-img">
-            
-        </div>
-        <div class="card-content">
-            <div>
-                <div class="card-title">
-                    <h3>Path to great universities</h3>
-                </div>
-                <div class="card-text short">
-                    <p>The graduates of GALILEO SCHOOL study at the top universities, from Oxford and Cambridge, through Santa Clara in Silicon Valley, Kings College in London to Edinburgh and Glasgow in Scotland. Our students became successful in a variety of professional carrier, from a founder of a multimillion company in London, a GLOBSEC Young Leader 2019, a member of the Permanent Mission of Slovakia to the United Nations, to a researcher of sustainable energy in Africa or an IT safety researcher at the Oxford University.</p>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card-text long">
-                <p>Small class sizes, student-centred approach, and a focus on individual interest of a student. Students build a portfolio of knowledge, skills and international certificates tailored to their preferred future career. The teaching and learning use embedded streaming, lesson materials, communication and assignments online using Microsoft Teams and Office 365.</p>
-                </div>
-            </div>
-            <div class="card-footer">
-                <button class="toggle-btn">...see more</button>
-            </div>
-        </div>
-    </div><div class="card about">
-        <div class="card-img">
-            
-        </div>
-        <div class="card-content">
-            <div>
-                <div class="card-title">
-                    <h3>Individual approach to learning</h3>
-                </div>
-                <div class="card-text short">
-                    <p>Education that focuses on academics is supported by plentiful opportunities to enhance the individual formation of a student. International competitions, internships, exchange trips with partner schools, cooperation with professionals and a support of an individual talent of each student are all part of the education experience at GALILEO SCHOOL.</p>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card-text long">
-                <p>Based on successful partnerships with Microsoft and Cisco the school has been recently able to provide the full academic teaching schedule via 100% online learning since the start of the pandemic. Students and teachers alike quickly adopted the online learning mode from the day one, exploring the benefits of modern technology and developing vital skills for future as a result of the pandemic. All resources, assignments, grades and communication are shared via the Microsoft Teams environment, with online classes streamed via Teams Meet or Cisco Webex Meet app.</p>
-                </div>
-            </div>
-            <div class="card-footer">
-                <button class="toggle-btn">...see more</button>
-            </div>
+        </object>
+    </div>
+</div>
         </div>
     </div>
+
+    <div id="modal-close" class="admissions modal-close no-display fixed top">
+        <img src="../../../../images/icons/close_black.png" alt="">
+    </div>
+    <div id="modal-box" class="admissions modal fixed"></div>
+    <div id="pop-up" class="fixed top modal pop-up">
+        <div class="content" style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="header">
+
+            </div>
+            <div class="body">
+
+            </div>
+            <div class="footer">
+                <button onclick="hideMsgBox()" id="close-pop" style="height: 100%; border: none; background-color: #ffffffcc; font-family: 'Century Gothic', 'Futura', 'Didact Gothic', sans-serif; font-size: large; font-weight: bold; float: right;">X</button>
+            </div>
         </div>
     </div>
 
     <!-- Scripts at the end to make sure everything else is already loaded. -->
     <script src="../../../../js/carousel.js"></script>
-    <script src="../../../../js/about.js"></script>
+    <script>
+        if(iFramesSupported) {
+            const modalBox = document.getElementById('modal-box');
+            const modalCloseBtn = document.getElementById('modal-close');
+            const modalBckg = document.getElementById('modal-background');
+
+            let Handler;
+            const Viewer = new ModalViewer(modalBox, modalBckg, modalCloseBtn);
+            let Container;
+
+            /** Adding clickEvent listener for close button on modal box */
+            $(modalCloseBtn).click((e) => {
+            if (!Handler) {
+                e.preventDefault();
+                throw new Error('Handler was not set before calling modalCloseBtn clickEvent');
+            }
+            Handler.hide();
+            });
+
+            // TODO: var btn = Viewer._addButton("modal-inner-close", "Back"); - Fix event listener getting ducked up when shown
+
+            /** Click Handler of Admissions
+             *
+             * @param {HTMLElement} target
+             */
+            function Click(target) {
+            const textContainer = target.querySelector('div.admiss-text');
+            Container = new ModalContainer(textContainer);
+            if (!Handler) {
+                Handler = new ModalHandler(Container, Viewer, false, false);
+            } else { Handler.loadNewContainer(Container); }
+
+            Handler.show();
+            Handler.scrollToTop();
+            }
+        }
+    </script>
+    <script>
+        if(!iFramesSupported) {
+            function Click(target) {
+                const alternative = target.querySelector('div.alt-text').innerHTML;
+                showMsgBox("Whoops... say no to PDF", `${alternative}`);
+            }
+
+            function showMsgBox(title, content) {
+                hideMsgBox();
+                let HtmlElement = document.getElementById('pop-up');
+                HtmlElement.children[0].children[0].innerHTML = title;
+                HtmlElement.children[0].children[1].innerHTML = content;
+                $("#" + HtmlElement.id).slideDown(300);
+                // setTimeout(() => {hideMsgBox();}, 7000);
+            }
+
+            function hideMsgBox() {
+                $('#pop-up').slideUp(300);
+            }
+        }
+    </script>
 </body>
 
 </html>
