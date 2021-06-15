@@ -125,6 +125,9 @@
 <li onclick="location.href='https://galileotimesgym3a.wordpress.com/'" class="nav-elem">
     <div>Študentské Noviny</div>
 </li>
+<li onclick="location.href='../../../sk/PearsonEdexcel/index.html'" class="nav-elem">
+    <div>Pearson Edexcel</div>
+</li>
     </ul>
 </div>
 
@@ -163,11 +166,33 @@
 <li onclick="location.href='https://galileotimesgym3a.wordpress.com/'" class="nav-elem">
     <div>Študentské Noviny</div>
 </li>
+<li onclick="location.href='../../../sk/PearsonEdexcel/index.html'" class="nav-elem">
+    <div>Pearson Edexcel</div>
+</li>
     </ul>
 </div>
     <div class="content">
         <div id="menu-overlay" class="transparent overlay no-display"></div>
-        <!-- The link below explains how a bootstrap carousel works -->
+        <style>
+    .special {
+        height: clamp(150px, 100% ,400px); 
+        object-fit: cover;
+    }
+
+    @media screen and (min-width: 670px) {
+        .special {
+            height: clamp(210px, 25vw ,480px); 
+        }
+
+        .clickable:hover {
+            cursor: pointer;
+            transform: scale(1.01);
+            transition: .4s;
+        }
+    }
+</style>
+
+<!-- The link below explains how a bootstrap carousel works -->
 <!-- https://getbootstrap.com/docs/4.3/components/carousel/ -->
 <div id="carousel" class="carousel slide" data-ride="carousel">
     <!-- The slide indicators -->
@@ -176,6 +201,7 @@
         <li data-target="#carousel" data-slide-to="1"></li>
         <li data-target="#carousel" data-slide-to="2"></li>
         <li data-target="#carousel" data-slide-to="3"></li>
+        <li data-target="#carousel" data-slide-to="4"></li>
     </ol>
     <!-- Carousel content -->
     <div class="carousel-inner">
@@ -215,6 +241,14 @@
                 </p>
             </div>
         </div>
+        <div class="carousel-item clickable" onclick="location.href='../../../en/PearsonEdexcel/index.html'">
+            <img class="d-block w-100 carousel-img special" src="../../../../images/carousel/carousel5.jpg" style alt="Picture Not Available!">
+            <div class="carousel-caption">
+                <p class="slide-text">
+                    Medzinárodne uznávané certifikáty
+                </p>
+            </div>
+        </div>
         <!-- Template: -->
         <!-- 
         <div class="carousel-item">
@@ -242,7 +276,7 @@
         <div class="card-deck about">
             <div class="card about">
         <div class="card-img">
-            
+            <img src="../../../../images/AboutUs/primarySchool/modern.JPG" class="card-img-top" alt="Picture Not Available!">
         </div>
         <div class="card-content">
             <div>
@@ -264,7 +298,7 @@
         </div>
     </div><div class="card about">
         <div class="card-img">
-            
+            <img src="../../../../images/AboutUs/primarySchool/transnational.JPG" class="card-img-top" alt="Picture Not Available!">
         </div>
         <div class="card-content">
             <div>
@@ -286,7 +320,7 @@
         </div>
     </div><div class="card about">
         <div class="card-img">
-            
+            <img src="../../../../images/AboutUs/primarySchool/bilingual.JPG" class="card-img-top" alt="Picture Not Available!">
         </div>
         <div class="card-content">
             <div>
@@ -308,7 +342,7 @@
         </div>
     </div><div class="card about">
         <div class="card-img">
-            
+            <img src="../../../../images/AboutUs/primarySchool/creativity.JPG" class="card-img-top" alt="Picture Not Available!">
         </div>
         <div class="card-content">
             <div>
